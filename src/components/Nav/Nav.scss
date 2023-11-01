@@ -1,0 +1,13 @@
+.nav_wrap{
+  width: 100%;
+  
+  ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+
+    li{
+      list-style: none;
+    }
+  }
+}

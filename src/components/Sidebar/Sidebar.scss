@@ -1,0 +1,30 @@
+.sidebar_wrap{
+  background: black;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: fit-content;
+
+  p{
+    transform : rotate(-90deg);
+    color: white;
+  }
+
+  &_icons{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+  }
+}
+
+.icon_wrap{
+  background: white;
+  border-radius: 7px;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
