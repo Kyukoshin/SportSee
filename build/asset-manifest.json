@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00b0f9d0.css",
+    "main.js": "/static/js/main.dd393a4f.js",
+    "static/media/logo.svg": "/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
+    "static/media/swim.svg": "/static/media/swim.bc12b705d445672f550a8441d581c700.svg",
+    "static/media/bike.svg": "/static/media/bike.fe885ecda828d3e2f637bb3b675db76c.svg",
+    "static/media/yoga.svg": "/static/media/yoga.76760efccddf14928ee9263744c1b6e6.svg",
+    "index.html": "/index.html",
+    "static/media/dumbell.svg": "/static/media/dumbell.9d22814b98d0ca386d9ddacded4eae80.svg",
+    "main.00b0f9d0.css.map": "/static/css/main.00b0f9d0.css.map",
+    "main.dd393a4f.js.map": "/static/js/main.dd393a4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00b0f9d0.css",
+    "static/js/main.dd393a4f.js"
+  ]
+}
