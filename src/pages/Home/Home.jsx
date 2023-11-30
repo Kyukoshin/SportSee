@@ -24,7 +24,6 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // Je récupère les données principales de l'utilisateur en utilisant Promise.all() pour exécuter plusieurs requêtes en parallèle
       const [mainResponse, activity, sessions, performance] = await Promise.all([
         getMainData(userId),
         getActivityData(userId),
@@ -32,7 +31,6 @@ const Home = () => {
         getPerformanceData(userId),
       ])
 
-      // Je mets à jour le state data avec les données récupérées
       setData({
         main: mainResponse.data,
         activity,
@@ -46,8 +44,20 @@ const Home = () => {
 
   console.log(data)
 
+  const firstName = data.main ? data.main.getFirstName() : ''
+  const userNutritionData = data.main ? data.main.getKeyData() : []
+  const todayScore = data.main ? data.main.getTodayScore() : 0
+  const userActivity = data.activity ? data.activity.getSessions() : []
+  const sessionLength = data.sessions ? data.sessions.getSessions() : []
+  const performanceDataAll = data.performance ? data.performance.getData() : []
 
-
+  console.log("First Name:", firstName);
+  console.log("User Nutrition Data:", userNutritionData);
+  console.log("Today's Score:", todayScore);
+  console.log("User Activity:", userActivity);
+  console.log("Session Length:", sessionLength);
+  console.log("Performance Data All:", performanceDataAll);
+  
   return (
     <div className="home">
       <Sidebar />

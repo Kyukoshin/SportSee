@@ -5,7 +5,7 @@ import activityData from './activityData'
 import sessionData from './sessionData'
 import performanceData from './performanceData'
 
-let mock = true
+let mock = false
 
 export const getMainData = async (user) => {
     const mainDataUrl = `http://localhost:3000/user/${user}`;
