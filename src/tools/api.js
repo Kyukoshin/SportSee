@@ -5,10 +5,13 @@ import activityData from './activityData'
 import sessionData from './sessionData'
 import performanceData from './performanceData'
 
+let mock = true
+
 export const getMainData = async (user) => {
     const mainDataUrl = `http://localhost:3000/user/${user}`;
     const mainDataUrlMocked = '/userMainData.json';
     let errorCode;
+    
 
     try {
         const userMain = mock ? await axios.get(mainDataUrlMocked) : await axios.get(mainDataUrl);
@@ -34,9 +37,9 @@ export const getActivityData = async (user) => {
     let errorCode;
 
     try {
-        const userMain = mock ? await axios.get(activityDataUrlMocked) : await axios.get(activityDataUrl);
+        const userActivity = mock ? await axios.get(activityDataUrlMocked) : await axios.get(activityDataUrl);
 
-        const userMainData = new activityData(mock ? userMain.data.find(({ id }) => id === parseInt(user)) : userMain.data.data);
+        const userMainData = new activityData(mock ? userActivity.data.find(({ userId }) => userId === parseInt(user)) : userActivity.data.data);
 
         return { data: userMainData };
     } catch (error) {
@@ -57,9 +60,9 @@ export const getSessionData = async (user) => {
     let errorCode;
 
     try {
-        const userMain = mock ? await axios.get(sessionDataUrlMocked) : await axios.get(sessionDataUrl);
+        const userSession = mock ? await axios.get(sessionDataUrlMocked) : await axios.get(sessionDataUrl);
 
-        const userMainData = new sessionData(mock ? userMain.data.find(({ id }) => id === parseInt(user)) : userMain.data.data);
+        const userMainData = new sessionData(mock ? userSession.data.find(({ userId }) => userId === parseInt(user)) : userSession.data.data);
 
         return { data: userMainData };
     } catch (error) {
@@ -80,9 +83,9 @@ export const getPerformanceData = async (user) => {
     let errorCode;
 
     try {
-        const userMain = mock ? await axios.get(performanceDataUrlMocked) : await axios.get(performanceDataUrl);
+        const userPerformance = mock ? await axios.get(performanceDataUrlMocked) : await axios.get(performanceDataUrl);
 
-        const userMainData = new performanceData(mock ? userMain.data.find(({ id }) => id === parseInt(user)) : userMain.data.data);
+        const userMainData = new performanceData(mock ? userPerformance.data.find(({ userId }) => userId === parseInt(user)) : userPerformance.data.data);
 
         return { data: userMainData };
     } catch (error) {
