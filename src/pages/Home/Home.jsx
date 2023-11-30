@@ -47,22 +47,21 @@ const Home = () => {
   const firstName = data.main ? data.main.getFirstName() : ''
   const userNutritionData = data.main ? data.main.getKeyData() : []
   const todayScore = data.main ? data.main.getTodayScore() : 0
-  const userActivity = data.activity ? data.activity.getSessions() : []
-  const sessionLength = data.sessions ? data.sessions.getSessions() : []
-  const performanceDataAll = data.performance ? data.performance.getData() : []
+  const userActivity = data.activity ? data.activity : []
+  const sessionLength = data.sessions ? data.sessions : []
+  const performanceData = data.performance ? data.performance : []
 
-  console.log("First Name:", firstName);
   console.log("User Nutrition Data:", userNutritionData);
   console.log("Today's Score:", todayScore);
   console.log("User Activity:", userActivity);
   console.log("Session Length:", sessionLength);
-  console.log("Performance Data All:", performanceDataAll);
-  
+  console.log("Performance Data All:", performanceData.data);
+
   return (
     <div className="home">
       <Sidebar />
       <div className="info_wrap">
-        <Title />
+        <Title name={firstName} />
         <div className="info_wrap_block">
           <div className="info_wrap_block_left">
             <div className="info_wrap_block_left_graph">
@@ -80,12 +79,13 @@ const Home = () => {
             </div>
 
             <div className="info_wrap_block_left_stats">
-              <div>
+              <div style={{ background: '#FF0000' }}>
                 <Graph />
               </div>
-              <div>
-                <Spider />
+              <div style={{ background: '#282D30' }}>
+                <Spider data={performanceData.data}/>
               </div>
+
               <div>
                 <Gauge />
               </div>

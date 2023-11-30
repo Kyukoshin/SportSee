@@ -5,7 +5,7 @@ import activityData from './activityData'
 import sessionData from './sessionData'
 import performanceData from './performanceData'
 
-let mock = false
+let mock = true
 
 export const getMainData = async (user) => {
     const mainDataUrl = `http://localhost:3000/user/${user}`;
@@ -39,9 +39,9 @@ export const getActivityData = async (user) => {
     try {
         const userActivity = mock ? await axios.get(activityDataUrlMocked) : await axios.get(activityDataUrl);
 
-        const userMainData = new activityData(mock ? userActivity.data.find(({ userId }) => userId === parseInt(user)) : userActivity.data.data);
+        const userActivityData = new activityData(mock ? userActivity.data.find(({ userId }) => userId === parseInt(user)) : userActivity.data.data);
 
-        return { data: userMainData };
+        return { data: userActivityData };
     } catch (error) {
         if (error.code === 'ERR_NETWORK') {
             errorCode = error.code;
@@ -62,9 +62,9 @@ export const getSessionData = async (user) => {
     try {
         const userSession = mock ? await axios.get(sessionDataUrlMocked) : await axios.get(sessionDataUrl);
 
-        const userMainData = new sessionData(mock ? userSession.data.find(({ userId }) => userId === parseInt(user)) : userSession.data.data);
+        const userSessionData = new sessionData(mock ? userSession.data.find(({ userId }) => userId === parseInt(user)) : userSession.data.data);
 
-        return { data: userMainData };
+        return { data: userSessionData };
     } catch (error) {
         if (error.code === 'ERR_NETWORK') {
             errorCode = error.code;
@@ -85,9 +85,9 @@ export const getPerformanceData = async (user) => {
     try {
         const userPerformance = mock ? await axios.get(performanceDataUrlMocked) : await axios.get(performanceDataUrl);
 
-        const userMainData = new performanceData(mock ? userPerformance.data.find(({ userId }) => userId === parseInt(user)) : userPerformance.data.data);
+        const userPerformanceData = new performanceData(mock ? userPerformance.data.find(({ userId }) => userId === parseInt(user)) : userPerformance.data.data);
 
-        return { data: userMainData };
+        return { data: userPerformanceData };
     } catch (error) {
         if (error.code === 'ERR_NETWORK') {
             errorCode = error.code;
