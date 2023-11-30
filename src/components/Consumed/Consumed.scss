@@ -1,0 +1,44 @@
+.consumed {
+    &_wrap {
+        display: flex;
+        flex-flow: row;
+        border-radius: 10px;
+        padding: .5em;
+        align-items: center;
+        width: max-content;
+
+        &_icon {
+            padding: 1em;
+            background-color: #f5ff0033;
+            border-radius: 10px;
+            width: 25px;
+            aspect-ratio: 1;
+
+            &_asset {
+                width: 25px;
+                aspect-ratio: 1;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+
+
+    &_text {
+        display: flex;
+        flex-flow: column;
+        margin-left: 1em;
+
+        h2{
+
+        }
+
+        p{
+            color: #74798C;
+        }
+    }
+}

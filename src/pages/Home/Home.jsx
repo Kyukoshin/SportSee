@@ -7,6 +7,8 @@ import Spider from "../../components/Spider/Spider";
 import Gauge from "../../components/Gauge/Gauge";
 import Consumed from "../../components/Consumed/Consumed";
 
+
+
 export default function Home() {
   return (
     <div className="home">
@@ -24,7 +26,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div>
+              <div className="info_wrap_block_left_graph_body">
                 <Chart />
               </div>
             </div>
@@ -43,18 +45,15 @@ export default function Home() {
           </div>
 
           <div className="info_wrap_block_right">
-            <div>
+            
               <Consumed />
-            </div>
-            <div>
+            
               <Consumed />
-            </div>
-            <div>
+            
               <Consumed />
-            </div>
-            <div>
+            
               <Consumed />
-            </div>
+            
           </div>
         </div>
       </div>

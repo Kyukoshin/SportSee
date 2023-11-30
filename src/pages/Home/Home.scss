@@ -5,13 +5,13 @@
 
 .info_wrap{
   width: -webkit-fill-available;
-  margin: 3vw 4vw;
+  margin: 4em 8em;
 
   &_block{
     display: flex;
     flex-flow:row;
     justify-content: space-between;
-    height: 70vh;
+    height: 60vh;
 
     &_left{
       display: flex;
@@ -20,7 +20,7 @@
       width: -webkit-fill-available;
 
       &_graph{
-        background:rgb(206, 206, 206);
+        background:#FBFBFB;
 
         &_head{
           display: flex;
@@ -30,8 +30,12 @@
           div{            
             display: flex;
             flex-flow: row;
-            gap: 100px;            
+            gap: 100px;  
           }
+        }
+
+        &_body{
+          height: 25vh;
         }
       }
 
@@ -42,7 +46,7 @@
         justify-content: space-between;
 
         div{
-          background:rgb(206, 206, 206);
+          background:#FBFBFB;
           width: -webkit-fill-available;
           aspect-ratio: 1;
         }
@@ -55,11 +59,6 @@
       flex-flow: column;
       justify-content: space-between;
       margin-left: 2em;
-
-      div{
-        background:rgb(206, 206, 206);
-        width: 15vw;
-      }
     }
   }
 }
