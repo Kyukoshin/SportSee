@@ -1,0 +1,26 @@
+.sessionLegend{
+    color: white;
+}
+
+.custom-tooltip-sessions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 3.5rem;
+    height: 2rem;
+    background-color: white;
+    color: black;
+}
+
+.recharts-legend-wrapper {
+    height: 1px;
+    
+        p {
+            position: absolute;
+            width: 147px;
+            height: auto;
+            left: 25px;
+            bottom: 190px;
+        }
+}

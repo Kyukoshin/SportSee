@@ -1,5 +1,12 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from 'recharts';
 
 const RadarChartComponent = ({ data }) => {
   if (!data || data.length === 0) {
@@ -27,8 +34,14 @@ const RadarChartComponent = ({ data }) => {
     <ResponsiveContainer width="100%" height={400}>
       <RadarChart outerRadius={150} width={400} height={400} data={reversedRadarData}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="kind" />
-        <Radar name="Performance" dataKey="value" stroke="#FF0101B2" fill="#FF0101B2" fillOpacity={0.7} />
+        <PolarAngleAxis dataKey="kind" tick={{ fill: 'white' }} />
+        <Radar
+          name="Performance"
+          dataKey="value"
+          stroke="#FF0101B2" 
+          fill="#FF0101B2"
+          fillOpacity={0.7}
+        />
       </RadarChart>
     </ResponsiveContainer>
   );

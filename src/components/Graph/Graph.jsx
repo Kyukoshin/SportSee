@@ -1,60 +1,43 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
-export default class Example extends PureComponent {
-  static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
+class SessionChart extends PureComponent {
 
   render() {
+    const { sessions } = this.props;
+    const data = sessions && sessions.data && sessions.data.sessions ? sessions.data.sessions : [];
+
+    
+if (!data) {  
+  console.error("Sessions data is undefined or missing.");
+  return null;
+}
+
+console.log(data);
+
+const renderLegend = () => {
+	return <p className="sessionLegend">Durée moyenne des sessions</p>
+}
+
+const CustomTooltip = ({ active, payload }) => {
+	if (active && payload) {
+		return (
+			<div className="custom-tooltip-sessions">
+				<p>{`${payload[0].value} min`}</p>
+			</div>
+		)
+	}
+
+	return null
+}
+
+const dayNames = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
     return (
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
-          height={300}
+          height={1500}
           data={data}
           margin={{
             top: 5,
@@ -63,15 +46,16 @@ export default class Example extends PureComponent {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+          
+          <XAxis dataKey="day" axisLine={false} tickLine={null} stroke="white" tickFormatter={(value, index) => dayNames[index]}/>
+          
+          <Tooltip content={<CustomTooltip />} />
+          <Legend content={renderLegend} />
+          <Line type="monotone" dataKey="sessionLength" stroke="white" strokeWidth={2} dot={false} />
         </LineChart>
       </ResponsiveContainer>
     );
   }
 }
+
+export default SessionChart;

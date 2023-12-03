@@ -1,6 +1,5 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Title from "../../components/Title/Title";
-import Legend from "../../components/Legend/Legend";
 import Graph from "../../components/Graph/Graph";
 import Chart from "../../components/Chart/Chart";
 import Spider from "../../components/Spider/Spider";
@@ -42,7 +41,7 @@ const Home = () => {
 
   }, [])
 
-  console.log(data)
+  //console.log(data)
 
   const firstName = data.main ? data.main.getFirstName() : ''
   const userNutritionData = data.main ? data.main.getKeyData() : []
@@ -51,11 +50,11 @@ const Home = () => {
   const sessionLength = data.sessions ? data.sessions : []
   const performanceData = data.performance ? data.performance : []
 
-  console.log("User Nutrition Data:", userNutritionData);
-  console.log("Today's Score:", todayScore);
-  console.log("User Activity:", userActivity);
-  console.log("Session Length:", sessionLength);
-  console.log("Performance Data All:", performanceData.data);
+  // console.log("User Nutrition Data:", userNutritionData);
+  // console.log("Today's Score:", todayScore);
+  // console.log("User Activity:", userActivity);
+  // console.log("Session Length:", sessionLength);
+  // console.log("Performance Data All:", performanceData.data);
 
   return (
     <div className="home">
@@ -67,27 +66,23 @@ const Home = () => {
             <div className="info_wrap_block_left_graph">
               <div className="info_wrap_block_left_graph_head">
                 Activité quotidienne
-                <div>
-                  <Legend />
-                  <Legend />
-                </div>
               </div>
 
               <div className="info_wrap_block_left_graph_body">
-                <Chart />
+                <Chart  data={userActivity}/>
               </div>
             </div>
 
             <div className="info_wrap_block_left_stats">
               <div style={{ background: '#FF0000' }}>
-                <Graph />
+                <Graph sessions={sessionLength}/>
               </div>
               <div style={{ background: '#282D30' }}>
                 <Spider data={performanceData.data}/>
               </div>
 
               <div>
-                <Gauge />
+                <Gauge score={todayScore}/>
               </div>
             </div>
           </div>
