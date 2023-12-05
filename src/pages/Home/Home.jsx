@@ -74,15 +74,19 @@ const Home = () => {
             </div>
 
             <div className="info_wrap_block_left_stats">
-              <div style={{ background: '#FF0000' }}>
+              <div className="graph_wrap">
+                <p className="graph_legend">Durée moyenne des sessions</p>
                 <Graph sessions={sessionLength}/>
               </div>
               <div style={{ background: '#282D30' }}>
                 <Spider data={performanceData.data}/>
               </div>
 
-              <div>
-                <Gauge score={todayScore}/>
+              <div className="gauge_wrap">
+                <p className="gauge_legend_1">Score</p>
+                <p className="gauge_legend_2">{todayScore*100}%</p>
+                <p className="gauge_legend_3">de votre objectif</p>
+                <Gauge data={todayScore}/>
               </div>
             </div>
           </div>

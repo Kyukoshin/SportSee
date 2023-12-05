@@ -15,10 +15,6 @@ if (!data) {
 
 console.log(data);
 
-const renderLegend = () => {
-	return <p className="sessionLegend">Durée moyenne des sessions</p>
-}
-
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload) {
 		return (
@@ -40,17 +36,15 @@ const dayNames = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
           height={1500}
           data={data}
           margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
+            top: 10,
+            right: 0,
+            left: -55,
+            bottom: 10,
           }}
-        >
-          
-          <XAxis dataKey="day" axisLine={false} tickLine={null} stroke="white" tickFormatter={(value, index) => dayNames[index]}/>
-          
+        >          
+          <XAxis dataKey="day" axisLine={false} tickLine={null} stroke="white" tickFormatter={(value, index) => dayNames[index]}/>   
+          <YAxis axisLine={false} tick={false} domain={[0, 70]} />
           <Tooltip content={<CustomTooltip />} />
-          <Legend content={renderLegend} />
           <Line type="monotone" dataKey="sessionLength" stroke="white" strokeWidth={2} dot={false} />
         </LineChart>
       </ResponsiveContainer>

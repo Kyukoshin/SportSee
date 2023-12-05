@@ -55,7 +55,7 @@ export default class Chart extends PureComponent {
             tickLine={null}
             tickFormatter={(value, index) => index + 1}
           />
-          <YAxis axisLine={false} tickLine={null} orientation="right" />
+          <YAxis axisLine={false} tickLine={null} orientation="right"/>
           <Tooltip content={<CustomTooltip />} />
           <Legend verticalAlign="top" align="right" iconType="circle" stroke="white" />
           <Bar dataKey="calories" fill="red" name="Calories brûlées (kCal)" shape={<CustomBar2 />} activeBar={<Rectangle fill="red" stroke="red" />} />

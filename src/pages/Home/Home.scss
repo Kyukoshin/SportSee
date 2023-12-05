@@ -1,51 +1,51 @@
-.home{
+.home {
   display: flex;
   flex-flow: row;
 }
 
-.info_wrap{
+.info_wrap {
   width: -webkit-fill-available;
   margin: 4em 8em;
 
-  &_block{
+  &_block {
     display: flex;
-    flex-flow:row;
+    flex-flow: row;
     justify-content: space-between;
     height: 60vh;
 
-    &_left{
+    &_left {
       display: flex;
       flex-flow: column;
       justify-content: space-between;
       width: -webkit-fill-available;
 
-      &_graph{
-        background:#FBFBFB;
+      &_graph {
+        background: #FBFBFB;
 
-        &_head{
+        &_head {
           display: flex;
-          flex-flow:row;
+          flex-flow: row;
           justify-content: space-between;
 
-          div{            
+          div {
             display: flex;
             flex-flow: row;
-            gap: 100px;  
+            gap: 100px;
           }
         }
 
-        &_body{
+        &_body {
           height: 25vh;
         }
       }
 
-      &_stats{
+      &_stats {
         display: flex;
         flex-flow: row;
         gap: 2em;
         justify-content: space-between;
 
-        div{
+        div {
           width: -webkit-fill-available;
           aspect-ratio: 1;
         }
@@ -53,11 +53,69 @@
 
     }
 
-    &_right{
+    &_right {
       display: flex;
       flex-flow: column;
       justify-content: space-between;
       margin-left: 2em;
     }
   }
+}
+
+.graph_wrap {
+  background: red;
+  position: relative;
+}
+
+.graph_legend {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  color: white;
+  opacity: .5;
+  font-size: 17px;
+  width: 150px;
+  line-height: 30px;
+}
+
+.gauge_wrap {
+  background: #FBFBFB;
+  position: relative;
+}
+
+.gauge_legend {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+
+  opacity: .5;
+  font-size: 17px;
+  width: 150px;
+  line-height: 30px;
+
+  &_1 {
+    position: absolute;
+    color: Black;
+    top: 50px;
+    left: 50px;
+  }
+
+  &_2 {
+    position: absolute;
+    color: black;
+    top: 35%;
+    left: 45%;
+    font-weight: bold;
+    font-size: 27px;
+  }
+
+  &_3 {    
+    position: absolute;
+    color: grey;
+    top: 46%;
+    left: 44%;
+    font-size: 18px;
+    width: 70px;
+  }
+
 }
