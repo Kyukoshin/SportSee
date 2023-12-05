@@ -50,12 +50,6 @@ const Home = () => {
   const sessionLength = data.sessions ? data.sessions : []
   const performanceData = data.performance ? data.performance : []
 
-  // console.log("User Nutrition Data:", userNutritionData);
-  // console.log("Today's Score:", todayScore);
-  // console.log("User Activity:", userActivity);
-  // console.log("Session Length:", sessionLength);
-  // console.log("Performance Data All:", performanceData.data);
-
   return (
     <div className="home">
       <Sidebar />
@@ -93,13 +87,13 @@ const Home = () => {
 
           <div className="info_wrap_block_right">
 
-            <Consumed />
+            <Consumed index={0} data={userNutritionData.calorieCount}/>
 
-            <Consumed />
+            <Consumed index={1} data={userNutritionData.proteinCount}/>
 
-            <Consumed />
+            <Consumed index={2} data={userNutritionData.carbohydrateCount}/>
 
-            <Consumed />
+            <Consumed index={3} data={userNutritionData.lipidCount}/>
 
           </div>
         </div>
