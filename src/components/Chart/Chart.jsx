@@ -3,7 +3,7 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 
 const CustomBar = (props) => {
   const { x, y, width, height } = props;
-  return <Rectangle x={x} y={y} width={10} height={height} fill="grey" radius={[10, 10, 0, 0]} />;
+  return <Rectangle x={x} y={y} width={10} height={height} fill="#282D30" radius={[10, 10, 0, 0]} />;
 };
 
 const CustomBar2 = (props) => {
@@ -43,7 +43,7 @@ export default class Chart extends PureComponent {
           data={sessions}
           margin={{
             top: 25,
-            right: 25,
+            right: 0,
             left: 25,
             bottom: 25,
           }}
@@ -57,9 +57,9 @@ export default class Chart extends PureComponent {
           />
           <YAxis axisLine={false} tickLine={null} orientation="right"/>
           <Tooltip content={<CustomTooltip />} />
-          <Legend verticalAlign="top" align="right" iconType="circle" stroke="white" />
+          {/* <Legend verticalAlign="top" align="right" iconType="circle" formatter={(value, entry) => <span style={{ color: 'grey' }}>{value}</span>} wrapperStyle={{position: 'relative', marginTop: '-371px'}}/> */}
           <Bar dataKey="calories" fill="red" name="Calories brûlées (kCal)" shape={<CustomBar2 />} activeBar={<Rectangle fill="red" stroke="red" />} />
-          <Bar dataKey="kilogram" fill="grey" name="Poids (kg)" shape={<CustomBar />} activeBar={<Rectangle fill="grey" stroke="grey" />} />
+          <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" shape={<CustomBar />} activeBar={<Rectangle fill="#282D30" stroke="#282D30" />} />
         </BarChart>
       </ResponsiveContainer>
     );

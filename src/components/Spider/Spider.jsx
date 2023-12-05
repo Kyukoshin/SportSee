@@ -31,7 +31,7 @@ const RadarChartComponent = ({ data }) => {
   const reversedRadarData = [...radarData].reverse();
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" height="100%">
       <RadarChart outerRadius={150} width={400} height={400} data={reversedRadarData}>
         <PolarGrid />
         <PolarAngleAxis dataKey="kind" tick={{ fill: 'white' }} />

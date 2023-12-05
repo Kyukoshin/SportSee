@@ -60,40 +60,46 @@ const Home = () => {
             <div className="info_wrap_block_left_graph">
               <div className="info_wrap_block_left_graph_head">
                 Activité quotidienne
+                <div>
+                  <p><span className="greyDot"></span>Poids (kg)</p>
+                  <p><span className="redDot"></span>Calories brûlées (kCal)</p>
+                </div>
               </div>
+              
 
               <div className="info_wrap_block_left_graph_body">
-                <Chart  data={userActivity}/>
+                <Chart data={userActivity} />
               </div>
             </div>
 
             <div className="info_wrap_block_left_stats">
               <div className="graph_wrap">
                 <p className="graph_legend">Durée moyenne des sessions</p>
-                <Graph sessions={sessionLength}/>
+                <Graph sessions={sessionLength} />
               </div>
-              <div style={{ background: '#282D30' }}>
-                <Spider data={performanceData.data}/>
+
+              <div className="spider_wrap">
+                <Spider data={performanceData.data} />
               </div>
 
               <div className="gauge_wrap">
                 <p className="gauge_legend_1">Score</p>
-                <p className="gauge_legend_2">{todayScore*100}%</p>
+                <p className="gauge_legend_2">{todayScore * 100}%</p>
                 <p className="gauge_legend_3">de votre objectif</p>
-                <Gauge data={todayScore}/>
+                <Gauge data={todayScore} />
               </div>
             </div>
           </div>
 
           <div className="info_wrap_block_right">
 
-            <Consumed index={0} data={userNutritionData.calorieCount}/>
+            <Consumed index={0} data={userNutritionData.calorieCount} />
 
-            <Consumed index={1} data={userNutritionData.proteinCount}/>
+            <Consumed index={1} data={userNutritionData.proteinCount} />
 
-            <Consumed index={2} data={userNutritionData.carbohydrateCount}/>
+            <Consumed index={2} data={userNutritionData.carbohydrateCount} />
 
-            <Consumed index={3} data={userNutritionData.lipidCount}/>
+            <Consumed index={3} data={userNutritionData.lipidCount} />
 
           </div>
         </div>

@@ -10,14 +10,14 @@
   &_block {
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
     height: 60vh;
+    gap: 5em;
 
     &_left {
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      width: -webkit-fill-available;
+      width: 60vw;
 
       &_graph {
         background: #FBFBFB;
@@ -26,11 +26,13 @@
           display: flex;
           flex-flow: row;
           justify-content: space-between;
+          font-weight: 500;
 
           div {
             display: flex;
             flex-flow: row;
-            gap: 100px;
+            gap: 50px;
+            color: #74798C;
           }
         }
 
@@ -46,8 +48,9 @@
         justify-content: space-between;
 
         div {
-          width: -webkit-fill-available;
+          width: 30%;
           aspect-ratio: 1;
+          border-radius: 5px
         }
       }
 
@@ -60,6 +63,24 @@
       margin-left: 2em;
     }
   }
+}
+
+.greyDot{
+  width: 12px;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  background-color: #282D30;
+  display: inline-block;
+  margin-right: .5em;
+}
+
+.redDot{
+  width: 12px;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  background-color: red;
+  display: inline-block;
+  margin-right: .5em;
 }
 
 .graph_wrap {
@@ -76,6 +97,11 @@
   font-size: 17px;
   width: 150px;
   line-height: 30px;
+}
+
+.spider_wrap{
+  background: #282D30;
+  position: relative;
 }
 
 .gauge_wrap {
