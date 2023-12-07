@@ -49,6 +49,7 @@
 
         div {
           width: 30%;
+          height: auto;
           aspect-ratio: 1;
           border-radius: 5px
         }
@@ -139,9 +140,10 @@
     position: absolute;
     color: grey;
     top: 46%;
-    left: 44%;
+    left: 42%;
     font-size: 18px;
     width: 70px;
+    text-align: center;
   }
 
 }

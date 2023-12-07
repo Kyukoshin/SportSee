@@ -1,0 +1,16 @@
+.wrap_users{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.wrap_landing{
+    margin: auto;
+    width: 10em;
+    height:5em;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}

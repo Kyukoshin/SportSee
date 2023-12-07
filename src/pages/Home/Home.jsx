@@ -7,12 +7,16 @@ import Gauge from "../../components/Gauge/Gauge";
 import Consumed from "../../components/Consumed/Consumed";
 
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import { getMainData, getActivityData, getSessionData, getPerformanceData } from '../../tools/api.js'
 
 const Home = () => {
 
   const { userId } = useParams()
+
+  if (userId !== '12' && userId !== '18') {
+    return <Navigate to="/*" />;
+  }
 
   const [data, setData] = useState({
     main: null,
