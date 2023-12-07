@@ -18,6 +18,7 @@ const Home = () => {
     return <Navigate to="/*" />;
   }
 
+
   const [data, setData] = useState({
     main: null,
     activity: null,

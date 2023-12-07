@@ -4,20 +4,22 @@
 }
 
 .info_wrap {
-  width: -webkit-fill-available;
-  margin: 4em 8em;
+  width: calc(100vw - 150px);
+  margin: 2vw 4vw;
 
   &_block {
     display: flex;
     flex-flow: row;
+    justify-content: space-between;
     height: 60vh;
-    gap: 5em;
+    gap: 3em;
 
     &_left {
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      width: 60vw;
+      width: -webkit-fill-available;
+    
 
       &_graph {
         background: #FBFBFB;
@@ -61,7 +63,6 @@
       display: flex;
       flex-flow: column;
       justify-content: space-between;
-      margin-left: 2em;
     }
   }
 }

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: fit-content;
-  height: calc(100vh - 109px);
+  height: calc(100vh - 80px);
 
   p{
     transform: rotate(180deg);
@@ -18,17 +18,17 @@
     display: flex;
     flex-flow: column;
     gap: 20px;
-    margin: 10em 0;
+    margin: 5vw 0;
   }
 }
 
 .icon_wrap{
   background: white;
   border-radius: 7px;
-  width: 75px;
-  height: 75px;
+  width: clamp(50px, 4vw, 75px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1.5em;
+  margin: 0 1vw;
+  aspect-ratio: 1;
 }

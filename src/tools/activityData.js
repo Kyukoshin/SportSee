@@ -13,8 +13,3 @@ export default class activityData {
 	}
 }
 
-export const monthTickFormatter = (tick) => {
-	const date = new Date(tick)
-
-	return date.getDate()
-}
