@@ -32,15 +32,21 @@ const RadarChartComponent = ({ data }) => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <RadarChart outerRadius={150} width={300} height={300} data={reversedRadarData}>
+      <RadarChart data={reversedRadarData} margin={{
+            top: 20,
+            right: 20,
+            bottom: 20,
+            left: 20,
+          }}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="kind" tick={{ fill: 'white' }} />
+        <PolarAngleAxis dataKey="kind" tick={{ fill: 'white', fontSize: 12 }} />
         <Radar
           name="Performance"
           dataKey="value"
           stroke="#FF0101B2" 
           fill="#FF0101B2"
           fillOpacity={0.7}
+          
         />
       </RadarChart>
     </ResponsiveContainer>
