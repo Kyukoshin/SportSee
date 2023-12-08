@@ -33,10 +33,10 @@ const RadarChartComponent = ({ data }) => {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart data={reversedRadarData} margin={{
-            top: 20,
-            right: 20,
-            bottom: 20,
-            left: 20,
+            top: 25,
+            right: 25,
+            bottom: 25,
+            left: 25,
           }}>
         <PolarGrid />
         <PolarAngleAxis dataKey="kind" tick={{ fill: 'white', fontSize: 12 }} />
