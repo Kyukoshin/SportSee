@@ -1,23 +1,13 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const CustomBar = (props) => {
-  const { x, y, width, height } = props;
-  return <Rectangle x={x} y={y} width={10} height={height} fill="#282D30" radius={[10, 10, 0, 0]} />;
-};
-
-const CustomBar2 = (props) => {
-  const { x, y, width, height } = props;
-  return <Rectangle x={x} y={y} width={10} height={height} fill="red" radius={[10, 10, 0, 0]} />;
-};
-
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom-tooltip-chart">
-
-        <p>{`${payload[1].value} Kg`}</p>
-        <p>{`${payload[0].value} Kcal`}</p>
+<p>{`${payload[0].value} Kg`}</p>
+        <p>{`${payload[1].value} Kcal`}</p>
+        
       </div>
     );
   }
@@ -38,8 +28,9 @@ export default class Chart extends PureComponent {
         <BarChart
           width={100}
           height={300}
-          barCategoryGap={100}
-          barGap={1000}
+          barCategoryGap='35%'
+          barGap='10'
+         
           data={sessions}
           margin={{
             top: 25,
@@ -55,11 +46,11 @@ export default class Chart extends PureComponent {
             tickLine={null}
             tickFormatter={(value, index) => index + 1}
           />
-          <YAxis axisLine={false} tickLine={null} orientation="right"/>
+          <YAxis axisLine={false}  tickLine={null} orientation="right"/>
           <Tooltip content={<CustomTooltip />} />
           {/* <Legend verticalAlign="top" align="right" iconType="circle" formatter={(value, entry) => <span style={{ color: 'grey' }}>{value}</span>} wrapperStyle={{position: 'relative', marginTop: '-371px'}}/> */}
-          <Bar dataKey="calories" fill="red" name="Calories brûlées (kCal)" shape={<CustomBar2 />} activeBar={<Rectangle fill="red" stroke="red" />} />
-          <Bar dataKey="kilogram" fill="#282D30" name="Poids (kg)" shape={<CustomBar />} activeBar={<Rectangle fill="#282D30" stroke="#282D30" />} />
+          <Bar Bar radius={[20, 20, 0, 0]} maxBarSize={8} dataKey="kilogram" fill="#282D30" name="Poids (kg)" activeBar={<Rectangle fill="#282D30" stroke="#282D30" />} />
+          <Bar Bar radius={[20, 20, 0, 0]} maxBarSize={8} dataKey="calories" fill="red" name="Calories brûlées (kCal)"  activeBar={<Rectangle fill="red" stroke="red" />} />
         </BarChart>
       </ResponsiveContainer>
     );

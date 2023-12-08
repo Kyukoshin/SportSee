@@ -37,8 +37,8 @@ const dayNames = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
           data={data}
           margin={{
             top: 10,
-            right: 0,
-            left: -55,
+            right: 10,
+            left: -50,
             bottom: 10,
           }}
         >          

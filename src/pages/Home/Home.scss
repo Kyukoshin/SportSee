@@ -92,11 +92,11 @@
 
 .graph_legend {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 2vw;
+  left: 2vw;
   color: white;
-  opacity: .5;
-  font-size: 17px;
+  opacity: 0.5;
+  font-size: clamp(12px, 1.5vw, 18px);
   width: 150px;
   line-height: 30px;
 }
@@ -113,8 +113,8 @@
 
 .gauge_legend {
   position: absolute;
-  top: 50px;
-  left: 50px;
+  top: 2vw;
+  left: 2vw;
 
   opacity: .5;
   font-size: 17px;
@@ -124,8 +124,8 @@
   &_1 {
     position: absolute;
     color: Black;
-    top: 50px;
-    left: 50px;
+    top: 2vw;
+    left: 2vw;
   }
 
   &_2 {
@@ -134,7 +134,7 @@
     top: 35%;
     left: 45%;
     font-weight: bold;
-    font-size: 27px;
+    font-size: clamp(15px, 2vw, 27px);
   }
 
   &_3 {    
@@ -142,7 +142,7 @@
     color: grey;
     top: 46%;
     left: 42%;
-    font-size: 18px;
+    font-size: clamp(12px, 1.5vw, 18px);
     width: 70px;
     text-align: center;
   }
