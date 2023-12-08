@@ -12,6 +12,7 @@
     color: white;
     writing-mode: vertical-lr;
     text-orientation: mixed;
+    font-size: clamp(12px, 1vw, 15px);
   }
 
   &_icons{
