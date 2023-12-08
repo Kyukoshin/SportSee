@@ -3,7 +3,4 @@ export default class performanceData {
 		this.data = data.data
 	}
 
-	getData() {
-		return this.data
-	}
 }
