@@ -11,6 +11,7 @@ const style = {
 export default class SingleDataRadialBarChart extends PureComponent {
   render() {
     const { data } = this.props;
+    console.log(data)
     const formattedData = [
       {
         name: 'Single Data',

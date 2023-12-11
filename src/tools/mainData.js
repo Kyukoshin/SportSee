@@ -3,7 +3,7 @@ export default class mainData {
 		this.data = data
 		this.userInfos = data.userInfos
 		this.firstName = this.userInfos.firstName
-		this.todayScore = data.todayScore
+		this.todayScore = data.todayScore ? data.todayScore : data.score //check quelle variable existe
 		this.keyData = data.keyData
 	}
 
@@ -12,7 +12,7 @@ export default class mainData {
 	}
 
 	getTodayScore() {
-		return this.todayScore
+		return this.todayScore;
 	}
 
 	getKeyData() {

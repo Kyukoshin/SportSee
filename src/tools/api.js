@@ -5,7 +5,7 @@ import activityData from './activityData'
 import sessionData from './sessionData'
 import performanceData from './performanceData'
 
-let mock = true
+let mock = false
 
 export const getMainData = async (user) => {
     const mainDataUrl = `http://localhost:3000/user/${user}`;
@@ -17,7 +17,7 @@ export const getMainData = async (user) => {
         const userMain = mock ? await axios.get(mainDataUrlMocked) : await axios.get(mainDataUrl);
 
         const userMainData = new mainData(mock ? userMain.data.find(({ id }) => id === parseInt(user)) : userMain.data.data);
-
+console.log(userMainData)
         return { data: userMainData };
     } catch (error) {
         if (error.code === 'ERR_NETWORK') {

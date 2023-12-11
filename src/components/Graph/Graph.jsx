@@ -13,8 +13,6 @@ if (!data) {
   return null;
 }
 
-console.log(data);
-
 const CustomTooltip = ({ active, payload }) => {
 	if (active && payload) {
 		return (

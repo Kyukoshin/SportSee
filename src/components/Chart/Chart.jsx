@@ -20,9 +20,6 @@ export default class Chart extends PureComponent {
     const { data } = this.props;
     const sessions = data?.data?.sessions || [];
 
-    console.log(sessions);
-
-
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
